@@ -1,0 +1,192 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070b19" />
+      <stop offset="50%" stop-color="#0b132b" />
+      <stop offset="100%" stop-color="#1c2541" />
+    </linearGradient>
+
+    <linearGradient id="neonCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00f2fe" />
+      <stop offset="100%" stop-color="#4facfe" />
+    </linearGradient>
+
+    <linearGradient id="neonPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f355da" />
+      <stop offset="100%" stop-color="#7000ff" />
+    </linearGradient>
+
+    <linearGradient id="neonGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#05dfd7" />
+      <stop offset="100%" stop-color="#00f7a5" />
+    </linearGradient>
+
+    <!-- Glowing Filters -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <filter id="glowPurple" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+
+    <!-- Dynamic Keyframe Animations -->
+    <style>
+      .pulse-slow {
+        animation: pulseSlow 4s ease-in-out infinite alternate;
+      }
+      .float-particle {
+        animation: floatParticle 6s ease-in-out infinite alternate;
+      }
+      .orbit-spin {
+        transform-origin: 1040px 180px;
+        animation: orbitSpin 16s linear infinite;
+      }
+      .grid-wave {
+        animation: gridWave 8s ease-in-out infinite alternate;
+      }
+      .pill-badge {
+        transition: transform 0.3s ease;
+      }
+      @keyframes pulseSlow {
+        0% { opacity: 0.35; transform: scale(0.98); }
+        100% { opacity: 0.85; transform: scale(1.02); }
+      }
+      @keyframes floatParticle {
+        0% { transform: translateY(0px) translateX(0px); opacity: 0.4; }
+        50% { transform: translateY(-15px) translateX(8px); opacity: 0.9; }
+        100% { transform: translateY(10px) translateX(-8px); opacity: 0.4; }
+      }
+      @keyframes orbitSpin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes gridWave {
+        0% { stroke-dashoffset: 0; opacity: 0.2; }
+        100% { stroke-dashoffset: 60; opacity: 0.45; }
+      }
+    </style>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="1200" height="420" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Animated Ambient Nebula Spots -->
+  <circle cx="150" cy="80" r="140" fill="#7000ff" opacity="0.18" filter="url(#glowPurple)" class="pulse-slow" />
+  <circle cx="1060" cy="220" r="160" fill="#00f2fe" opacity="0.16" filter="url(#glowCyan)" class="pulse-slow" />
+  <circle cx="620" cy="360" r="120" fill="#05dfd7" opacity="0.12" filter="url(#glowCyan)" class="pulse-slow" />
+
+  <!-- Observability Matrix Grid Pattern (Background layer) -->
+  <g opacity="0.15" stroke="#4facfe" stroke-width="1" stroke-dasharray="4 8" class="grid-wave">
+    <line x1="60" y1="50" x2="1140" y2="50" />
+    <line x1="60" y1="120" x2="1140" y2="120" />
+    <line x1="60" y1="190" x2="1140" y2="190" />
+    <line x1="60" y1="260" x2="1140" y2="260" />
+    <line x1="60" y1="330" x2="1140" y2="330" />
+    
+    <line x1="120" y1="30" x2="120" y2="390" />
+    <line x1="260" y1="30" x2="260" y2="390" />
+    <line x1="420" y1="30" x2="420" y2="390" />
+    <line x1="580" y1="30" x2="580" y2="390" />
+    <line x1="740" y1="30" x2="740" y2="390" />
+    <line x1="900" y1="30" x2="900" y2="390" />
+    <line x1="1040" y1="30" x2="1040" y2="390" />
+  </g>
+
+  <!-- High-Dimensional Vector / ANN Graph Illustration (Background right) -->
+  <g class="orbit-spin" opacity="0.75">
+    <circle cx="1040" cy="180" r="110" fill="none" stroke="url(#neonPurple)" stroke-width="1.5" stroke-dasharray="6 6" />
+    <circle cx="1040" cy="180" r="70" fill="none" stroke="url(#neonCyan)" stroke-width="1" stroke-dasharray="3 5" />
+    
+    <!-- Vector Nodes and Edges (HNSW / ANN graph) -->
+    <line x1="970" y1="140" x2="1040" y2="110" stroke="#00f2fe" stroke-width="1.2" opacity="0.6"/>
+    <line x1="1040" y1="110" x2="1110" y2="150" stroke="#f355da" stroke-width="1.2" opacity="0.6"/>
+    <line x1="1110" y1="150" x2="1070" y2="230" stroke="#05dfd7" stroke-width="1.2" opacity="0.6"/>
+    <line x1="1070" y1="230" x2="990" y2="220" stroke="#7000ff" stroke-width="1.2" opacity="0.6"/>
+    <line x1="990" y1="220" x2="970" y2="140" stroke="#4facfe" stroke-width="1.2" opacity="0.6"/>
+    <line x1="1040" y1="180" x2="970" y2="140" stroke="#00f2fe" stroke-width="1" opacity="0.4"/>
+    <line x1="1040" y1="180" x2="1110" y2="150" stroke="#00f2fe" stroke-width="1" opacity="0.4"/>
+    <line x1="1040" y1="180" x2="1070" y2="230" stroke="#f355da" stroke-width="1" opacity="0.4"/>
+
+    <!-- Graph Nodes -->
+    <circle cx="1040" cy="180" r="6" fill="#00f7a5" filter="url(#glowCyan)" />
+    <circle cx="970" cy="140" r="4.5" fill="#00f2fe" />
+    <circle cx="1040" cy="110" r="5" fill="#f355da" />
+    <circle cx="1110" cy="150" r="4.5" fill="#05dfd7" />
+    <circle cx="1070" cy="230" r="5.5" fill="#7000ff" filter="url(#glowPurple)" />
+    <circle cx="990" cy="220" r="4" fill="#4facfe" />
+  </g>
+
+  <!-- Dynamic Floating Particles -->
+  <g class="float-particle">
+    <circle cx="80" cy="190" r="3" fill="#00f2fe" opacity="0.7" />
+    <circle cx="340" cy="65" r="2.5" fill="#f355da" opacity="0.6" />
+    <circle cx="870" cy="90" r="3.5" fill="#05dfd7" opacity="0.8" />
+    <circle cx="780" cy="330" r="3" fill="#f355da" opacity="0.7" />
+    <circle cx="920" cy="350" r="2.5" fill="#00f2fe" opacity="0.6" />
+  </g>
+
+  <!-- FOREGROUND CONTENT: Header Tag, Title, Subtitle & Feature Badges -->
+  <!-- Category Tag Capsule -->
+  <g transform="translate(70, 52)">
+    <rect width="320" height="30" rx="15" fill="#132042" stroke="#00f2fe" stroke-width="1.2" opacity="0.9" />
+    <circle cx="15" cy="15" r="5" fill="#00f7a5" filter="url(#glowCyan)" />
+    <text x="32" y="20" fill="#00f2fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="12" font-weight="700" letter-spacing="1.5">PRODUCTION AI &amp; SEARCH ECOSYSTEM</text>
+  </g>
+
+  <!-- Main Title (Unobscured Foreground) -->
+  <text x="70" y="132" fill="#ffffff" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="800" letter-spacing="-0.5">
+    Vector Database Analytics
+  </text>
+  <text x="70" y="188" fill="url(#neonCyan)" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="44" font-weight="800" letter-spacing="-0.5">
+    &amp; Search Observability ⚡
+  </text>
+
+  <!-- Subtitle (Unobscured Foreground) -->
+  <text x="70" y="235" fill="#b4c6ef" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="16" font-weight="400" letter-spacing="0.2">
+    High-Dimensional Embeddings • Hybrid ANN/BM25 • RAG Retrieval Tracing • Drift Diagnostics
+  </text>
+
+  <!-- Feature Pills / Badges (Lower Foreground) -->
+  <g transform="translate(70, 275)">
+    <!-- Pill 1 -->
+    <g class="pill-badge" transform="translate(0, 0)">
+      <rect width="180" height="38" rx="8" fill="#111c38" stroke="#7000ff" stroke-width="1.2" />
+      <text x="16" y="24" fill="#d8b4fe" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">🎯 Billion-Scale ANN</text>
+    </g>
+    <!-- Pill 2 -->
+    <g class="pill-badge" transform="translate(195, 0)">
+      <rect width="195" height="38" rx="8" fill="#111c38" stroke="#00f2fe" stroke-width="1.2" />
+      <text x="16" y="24" fill="#7dd3fc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">🔍 Hybrid Semantic + BM25</text>
+    </g>
+    <!-- Pill 3 -->
+    <g class="pill-badge" transform="translate(405, 0)">
+      <rect width="195" height="38" rx="8" fill="#111c38" stroke="#05dfd7" stroke-width="1.2" />
+      <text x="16" y="24" fill="#6ee7b7" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">📊 UMAP / PCA Clustering</text>
+    </g>
+    <!-- Pill 4 -->
+    <g class="pill-badge" transform="translate(615, 0)">
+      <rect width="195" height="38" rx="8" fill="#111c38" stroke="#f355da" stroke-width="1.2" />
+      <text x="16" y="24" fill="#f472b6" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600">🔭 RAG Retrieval Traces</text>
+    </g>
+  </g>
+
+  <!-- Subtle Bottom Bar with Status Indicator -->
+  <g transform="translate(70, 360)">
+    <circle cx="6" cy="6" r="4" fill="#00f7a5" filter="url(#glowCyan)">
+      <animate attributeName="opacity" values="1;0.4;1" dur="2s" repeatCount="indefinite" />
+    </circle>
+    <text x="22" y="10" fill="#8da2c9" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="500">
+      Continuously Updated Ecosystem Guide • Verified 2026 SaaS Tiers &amp; GitHub Star Analytics
+    </text>
+  </g>
+</svg>
