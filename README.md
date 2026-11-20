@@ -169,11 +169,11 @@ Contributions are warmly welcome! To submit a new SaaS platform, open-source vec
 1. Fork this repository.
 2. Add your entry following the established format:
    - For SaaS tools: Include verified company size / valuation / ARR, starting paid tier pricing, and explicit free tier or trial limits.
-   - For Open-Source projects: Include repository handle, social star badge linked to stargazers, and a factual technical description.
+   - For Open-Source projects: Include repository handle, social Stars_Badge linked to stargazers, and a factual technical description.
 3. Submit a pull request with a descriptive title and reference links.
 
 ---
 
 ## 📜 Disclaimer
 
-*This repository is curated for informational, educational, and benchmarking purposes only. Trademarks, logos, and product names are property of their respective owners. Pricing tiers, free limits, valuation figures, and star counts are verified against public documentation as of late 2024–2026 and are subject to change by respective vendors.*
+*This repository is curated for informational, educational, and benchmarking purposes only. Trademarks, logos, and product names are property of their respective owners. Pricing tiers, free limits, valuation figures, and Stars_Counts are verified against public documentation as of late 2024–2026 and are subject to change by respective vendors.*
